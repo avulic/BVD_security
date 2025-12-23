@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B.V.D. Security | Osobna zaštita</title>
+    <meta name="description"
+        content="B.V.D. Security d.o.o. - Profesionalne usluge osobne zaštite, tjelohranitelja, zaštite događaja i sigurnog prijevoza u Hrvatskoj. Diskretna i pouzdana zaštita za pojedince, obitelji i poslovne klijente. Kontakt: +385 99 423 8485">
+
+    <title>B.V.D. Security | Privatna Zaštite u Hrvatskoj</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.jpeg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -19,7 +23,7 @@
             /* Optional: base color or third layer */
             background: url('images/bg_overlay.jpg') center/cover no-repeat;
             opacity: 0.8;
-            
+
         }
 
         .hero-bg::before {
@@ -71,17 +75,6 @@
             width: 100%;
         }
 
-        .sticky-buttons {
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 40;
-            transition: all 0.4s ease;
-            display: flex;
-            gap: 1.5rem;
-        }
-
         /* Desktop & Tablet: both buttons visible and centered */
         @media screen and (min-width: 769px) {
             .sticky-buttons {
@@ -128,6 +121,18 @@
                 max-width: 320px;
             }
         }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
@@ -137,9 +142,9 @@
         <!-- Top bar: Logo + Language Switch + Menu -->
         <div class="absolute top-0 left-0 right-0 flex justify-between items-center p-6 md:p-8 z-20">
             <div class="flex items-center gap-4">
-                <img src="https://www.creativefabrica.com/wp-content/uploads/2020/09/01/Bodyguard-Shield-security-logo-design-Graphics-5222889-1.jpg"
-                    alt="B.V.D Logo" class="h-10 md:h-12">
-                <span class="text-2xl md:text-3xl font-bold">B.V.D</span>
+                <img src="images/logo_nobg.png" alt="B.V.D Logo" class="h-16 md:h-20">
+                <span aria-hidden="true" class="sr-only">B.V.D</span>
+                <span aria-live="polite" class="block"></span>
             </div>
             <div class="flex items-center gap-6">
                 <!-- Language Switch -->
@@ -157,11 +162,13 @@
         <!-- Bottom left: Main text -->
         <div class="absolute bottom-0 left-0 p-8 my-8 md:p-16 max-w-2xl z-10">
             <h1 class="text-6xl md:text-8xl font-bold mb-4">
-                <span id="hero-heading"></span>
+                <span aria-hidden="true" class="sr-only">B.V.D</span>
+                <span id="hero-heading" aria-live="polite" class="block"></span>
             </h1>
 
             <h2 class="text-3xl md:text-5xl font-semibold text-yellow-500 mb-6">
-                <span id="hero-subtitle"></span>
+                <span aria-hidden="true" class="sr-only">Sigurnost u svakom trenutku</span>
+                <span id="hero-subtitle" aria-live="polite" class="block"></span>
             </h2>
 
             <p id="hero-paragraph"
@@ -169,11 +176,13 @@
                 data-en="B.V.D. Security –  We provide professional bodyguard services for individuals, families, and high-profile
                 clients."
                 data-hr="B.V.D. Security – Pružamo profesionalne usluge tjelohranitelja za pojedince, obitelji i visokoprofilne klijente.">
+                B.V.D. Security – Pružamo profesionalne usluge tjelohranitelja za pojedince, obitelji i visokoprofilne
+                klijente.
             </p>
 
             <a id="hero-link" href="#services"
                 class="text-lg md:text-xl uppercase tracking-wider hover:text-yellow-500 transition opacity-0 inline-block">
-                <span data-en="See more" data-hr="Vidi više">See more</span> ↓
+                <span data-en="See more" data-hr="Vidi više">Vidi više</span> ↓
             </a>
         </div>
 
@@ -184,7 +193,7 @@
         <div class="container max-w-6xl mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-12" data-en="Protection Services"
                 data-hr="Usluge zaštite">
-                Protection Services</h2>
+                Usluge zaštite</h2>
             <!-- <p class="text-center text-lg md:text-xl mb-16 text-gray-300 max-w-4xl mx-auto"
                 data-en="We provide discreet, professional protection tailored to your needs. As a dedicated local firm, we focus on personalized, high-quality bodyguard services for individuals, families, and events in our region."
                 data-hr="Pružamo diskretnu, profesionalnu zaštitu prilagođenu vašim potrebama. Kao predana lokalna tvrtka, fokusirani smo na personalizirane usluge tjelesne zaštite visoke kvalitete za pojedince, obitelji i događaje u našoj regiji.">
@@ -199,31 +208,29 @@
                     <p class="text-lg text-gray-300" data-en="Designed for executives, public figures, and private individuals requiring constant protection
                     awareness."
                         data-hr="Namijenjeno rukovoditeljima, javnim osobama i privatnim osobama kojima je potrebna stalna zaštita.">
-                        Designed for executives, public figures, and private individuals requiring constant protection
-                        awareness.
+                        Namijenjeno rukovoditeljima, javnim osobama i privatnim osobama kojima je potrebna stalna
+                        zaštita.
                     </p>
                 </div>
                 <div class="md:w-1/2 order-1 md:order-2 mb-8 md:mb-0 md:pl-12">
-                    <img src="images/bodyguard.jpg"
-                        alt="Personal Bodyguard" class="rounded-lg shadow-2xl w-full">
+                    <img src="images/bodyguard.jpg" alt="Osobni tjelohranitelj / Bliska zaštita" class="rounded-lg shadow-2xl w-full">
                 </div>
             </div>
 
             <!-- Service 2 -->
             <div class="flex flex-col md:flex-row-reverse items-center mb-20" data-aos="fade-up" data-aos-delay="200">
                 <div class="md:w-1/2">
-                    <h3 class="text-3xl font-bold mb-4" data-en="Event Security" data-hr="Zaštita događaja">Event
-                        Security</h3>
+                    <h3 class="text-3xl font-bold mb-4" data-en="Event Security" data-hr="Zaštita događaja">Zaštita
+                        događaja</h3>
                     <p class="text-lg text-gray-300" data-en="Strategic planning and on-site execution for private functions and corporate events. Risks are
                         anticipated, access is controlled, and incidents are prevented."
                         data-hr="Strateško planiranje i izvedba na licu mjesta za privatne funkcije i korporativne događaje. Rizici su predviđeni, pristup je kontroliran, a incidenti su spriječeni.">
-                        Strategic planning and on-site execution for private functions and corporate events. Risks are
-                        anticipated, access is controlled, and incidents are prevented.
+                        Strateško planiranje i izvedba na licu mjesta za privatne funkcije i korporativne događaje.
+                        Rizici su predviđeni, pristup je kontroliran, a incidenti su spriječeni.
                     </p>
                 </div>
                 <div class="md:w-1/2 mt-8 md:mb-0 md:pr-12">
-                    <img src="images/event.jpg" alt="Event Security"
-                        class="rounded-lg shadow-2xl w-full">
+                    <img src="images/event.jpg" alt="Zaštita događaja" class="rounded-lg shadow-2xl w-full">
                 </div>
             </div>
 
@@ -231,16 +238,16 @@
             <div class="flex flex-col md:flex-row items-center mb-20" data-aos="fade-up" data-aos-delay="100">
                 <div class="md:w-1/2 order-2 md:order-1">
                     <h3 class="text-3xl font-bold mb-4" data-en="Secure Transportation" data-hr="Siguran prijevoz">
-                        Secure Transportation</h3>
+                        Siguran prijevoz</h3>
                     <p class="text-lg text-gray-300" data-en="Professional security drivers and route planning, daily movements, and
                         sensitive travel scenarios."
                         data-hr="Profesionalni vozači zaštitari i planiranje ruta za transfere, svakodnevna putovanja i osjetljive scenarije putovanja.">
-                        Professional security drivers and route planning, daily movements, and
-                        sensitive travel scenarios.
+                        Profesionalni vozači zaštitari i planiranje ruta za transfere, svakodnevna putovanja i
+                        osjetljive scenarije putovanja.
                     </p>
                 </div>
                 <div class="md:w-1/2 order-1 md:order-2 mb-8 md:mb-0 md:pl-12">
-                    <img src="images/transport.jpg" alt="Secure Transportation" class="rounded-lg shadow-2xl w-full">
+                    <img src="images/transport.jpg" alt="Siguran prijevoz" class="rounded-lg shadow-2xl w-full">
                 </div>
             </div>
 
@@ -248,16 +255,16 @@
             <div class="flex flex-col md:flex-row-reverse items-center mb-20" data-aos="fade-up" data-aos-delay="300">
                 <div class="md:w-1/2">
                     <h3 class="text-3xl font-bold mb-4" data-en="Temporary / On-Demand Protection"
-                        data-hr="Privremena / Zaštita na zahtjev">Temporary / On-Demand Protection</h3>
+                        data-hr="Privremena / Zaštita na zahtjev">Privremena / Zaštita na zahtjev</h3>
                     <p class="text-lg text-gray-300" data-en=" Short-term or situational protection with rapid deployment, maintaining the same standards as
                         long-term assignments."
                         data-hr="Kratkoročna ili situacijska zaštita s brzim raspoređivanjem, uz održavanje istih standarda kao i dugoročni zadaci.">
-                        Short-term or situational protection with rapid deployment, maintaining the same standards as
-                        long-term assignments.
+                        Kratkoročna ili situacijska zaštita s brzim raspoređivanjem, uz održavanje istih standarda kao i
+                        dugoročni zadaci.
                     </p>
                 </div>
                 <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
-                    <img src="images/on_demand.jpg" alt="On-Demand Protection" class="rounded-lg shadow-2xl w-full">
+                    <img src="images/on_demand.jpg" alt="Privremena / Zaštita na zahtjev" class="rounded-lg shadow-2xl w-full">
                 </div>
             </div>
 
@@ -267,13 +274,13 @@
                     <button
                         class="client-modal-btn bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-2 px-4 mx-1 rounded text-base transition"
                         data-en="Request Consultation" data-hr="Zatraži konzultacije">
-                        Request Consultation
+                        Zatraži konzultacije
                     </button>
-                    <button
+                    <!-- <button
                         class="recruit-modal-btn bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded text-base transition"
                         data-en="Join Our Team" data-hr="Pridruži se timu">
-                        Join Our Team
-                    </button>
+                        Pridruži se timu
+                    </button> -->
                 </div>
             </div>
         </div>
@@ -284,8 +291,8 @@
         class="fixed inset-0 bg-black bg-opacity-80 hidden flex items-center justify-center z-50 modal">
         <div class="bg-gray-900 p-8 md:p-12 rounded-lg max-w-2xl w-full mx-4 relative">
             <button class="close-modal absolute top-4 right-4 text-3xl text-gray-400 hover:text-white">&times;</button>
-            <h3 class="text-3xl font-bold mb-8" data-en="Confidential Consultation Request"
-                data-hr="Zahtjev za povjerljive konzultacije">Confidential Consultation Request</h3>
+            <h3 class="text-3xl font-bold mb-8" data-en="Consultation Request"
+                data-hr="Zahtjev za konzultacije">Zahtjev za konzultacije</h3>
             <form class="space-y-6">
                 <input type="text" placeholder="Name / Ime"
                     class="w-full p-4 bg-gray-800 rounded border border-gray-700 focus:border-yellow-600 outline-none">
@@ -295,7 +302,7 @@
                     class="w-full p-4 bg-gray-800 rounded border border-gray-700 focus:border-yellow-600 outline-none">
                 <textarea rows="6" placeholder="Describe your needs / Opišite svoje potrebe"
                     class="w-full p-4 bg-gray-800 rounded border border-gray-700 focus:border-yellow-600 outline-none"></textarea>
-                <p class="text-3xl font-bold text-yellow-500"> <i class="fab fa-whatsapp"></i> &nbsp;+385 99 123 4567
+                <p class="text-3xl font-bold text-yellow-500"> <i class="fab fa-whatsapp"></i> &nbsp;+385 99 423 8485
                 </p>
                 <button type="submit"
                     class="w-full bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-4 rounded text-lg transition"
@@ -324,7 +331,7 @@
                     class="w-full p-4 bg-gray-800 rounded border border-gray-700 focus:border-yellow-600 outline-none"></textarea>
                 <button type="submit"
                     class="w-full bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-4 rounded text-lg transition"
-                    data-en="Submit Application" data-hr="Pošalji prijavu">Submit Application</button>
+                    data-en="Submit Application" data-hr="Pošalji prijavu">Pošalji prijavu</button>
             </form>
         </div>
     </div>
@@ -342,28 +349,25 @@
                     <p class="text-gray-300" data-en=" Former law enforcement professionals trained to remain calm, controlled, and
                         decisive under pressure."
                         data-hr="Bivši profesionalci u provođenju zakona obučeni da ostanu mirni, kontrolirani i odlučni pod pritiskom.">
-                        Former law enforcement professionals trained to remain calm, controlled, and
-                        decisive under pressure.</p>
+                        Bivši profesionalci u provođenju zakona obučeni da ostanu mirni, kontrolirani i odlučni pod pritiskom.</p>
                 </div>
                 <div class="text-center">
                     <i class="fas fa-globe text-6xl text-yellow-600 mb-6"></i>
                     <h3 class="text-2xl font-bold mb-4" data-en="Absolute Discretion" data-hr="Apsolutna diskrecija">
-                        Absolute Discretion</h3>
+                        Apsolutna diskrecija</h3>
                     <p class="text-gray-300"
                         data-en="Client identities, movements, and details are treated with strict confidentiality at all times."
                         data-hr="Identitet, kretanje i detalji klijenata tretiraju se strogo povjerljivo u svakom trenutku.">
-                        Client identities, movements, and details are treated with strict confidentiality at all times.
+                        Identitet, kretanje i detalji klijenata tretiraju se strogo povjerljivo u svakom trenutku.
                     </p>
                 </div>
                 <div class="text-center">
                     <i class="fas fa-clock text-6xl text-yellow-600 mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4" data-en="24/7 Availability" data-hr="24/7 Dostupnost">24/7
-                        Availability
-                    </h3>
+                    <h3 class="text-2xl font-bold mb-4" data-en="24/7 Availability" data-hr="24/7 Dostupnost">24/7 Dostupnost</h3>
                     <p class="text-gray-300"
                         data-en="Immediate response and rapid deployment—because threats do not follow office hours."
                         data-hr="Trenutni odgovor i brzo raspoređivanje - jer prijetnje ne slijede radno vrijeme.">
-                        Immediate response and rapid deployment—because threats do not follow office hours.</p>
+                        Trenutni odgovor i brzo raspoređivanje - jer prijetnje ne slijede radno vrijeme.</p>
                 </div>
             </div>
             <!-- <div class="mt-16 text-center">
@@ -386,38 +390,28 @@
                 <p data-en="B.V.D Security d.o.o. is a private security company specializing in personal and bodyguard
                                 protection in the Republic of Croatia.
                                 Our team conducts risk assessments and develops customized security strategies with the aim
-                                of creating a stable and controlled environment for clients." data-hr="B.V.D Security d.o.o. je privatna zaštitarska tvrtka specijalizirana za zaštitu osoblja i 
+                                of creating a stable and controlled environment for clients." 
+                    data-hr="B.V.D Security d.o.o. je privatna zaštitarska tvrtka specijalizirana za zaštitu osoblja i 
                                 tjelohranitelja u Republici Hrvatskoj. Naš tim provodi procjene rizika i razvija prilagođene sigurnosne 
                                 strategije s ciljem stvaranja stabilnog i kontroliranog okruženja za klijente.">
-                    B.V.D Security d.o.o. is a private security company specializing in personal and bodyguard
-                    protection in the Republic of Croatia.
-                    Our team conducts risk assessments and develops customized security strategies with the aim
-                    of creating a stable and controlled environment for clients.
+                    B.V.D Security d.o.o. je privatna zaštitarska tvrtka specijalizirana za zaštitu osoblja i 
+                    tjelohranitelja u Republici Hrvatskoj. Naš tim provodi procjene rizika i razvija prilagođene sigurnosne 
+                    strategije s ciljem stvaranja stabilnog i kontroliranog okruženja za klijente.
                 </p>
                 <p data-en="Effective security is not an expense, but a thoughtful investment in
-                                personal safety, business continuity and reputation." data-hr="Učinkovita sigurnost nije trošak, već promišljeno ulaganje u osobnu 
+                                personal safety, business continuity and reputation." 
+                    data-hr="Učinkovita sigurnost nije trošak, već promišljeno ulaganje u osobnu 
                                 sigurnost, kontinuitet poslovanja i ugled.">
-                    Effective security is not an expense, but a thoughtful investment in
-                    personal safety, business continuity and reputation.
+                    Učinkovita sigurnost nije trošak, već promišljeno ulaganje u osobnu sigurnost, kontinuitet poslovanja i ugled.
                 </p>
             </div>
 
             <!-- Image and Map -->
-            <div class="grid md:grid-cols-2 gap-12 mt-12 items-start">
-                <!-- Image -->
-                <div class="w-full">
-                    <img src="https://www.shutterstock.com/image-photo/professional-headshots-bodyguard-service-side-260nw-2333648495.jpg"
-                        alt="Team Silhouette" class="rounded-lg shadow-2xl w-full h-full object-cover">
-                </div>
-
+            <div class="flex justify-center">
                 <!-- Google Maps -->
-                <div class="w-full h-full">
-                    <div class="shadow-2xl rounded-xl overflow-hidden w-full h-full">
-                        <iframe width="100%" height="450" class="w-full h-full" style="border:0" loading="lazy"
-                            allowfullscreen referrerpolicy="no-referrer-when-downgrade"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.123456789!2d15.974567!3d45.815011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d68a3e5cabc1%3A0x1234567890abcdef!2sYour%20Business%20Name!5e0!3m2!1sen!2shr!4v1234567890000">
-                        </iframe>
-                    </div>
+                <div class="shadow-2xl rounded-xl overflow-hidden w-half h-full mt-12">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d11127.934257328188!2d15.998925999999999!3d45.791557!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDXCsDQ3JzI5LjYiTiAxNcKwNTknNTYuMSJF!5e0!3m2!1sen!2sus!4v1766502073133!5m2!1sen!2sus" 
+                    width="100%" height="450" class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -425,9 +419,9 @@
             <div class="mt-16 text-center text-gray-300">
                 <p class="text-xl mb-4" data-en="For immediate assistance, call us 24/7:"
                     data-hr="Za asistenciju, nazovite nas 24/7:">
-                    For immediate assistance, call us 24/7:
+                    Za asistenciju, nazovite nas 24/7:
                 </p>
-                <p class="text-3xl font-bold text-yellow-500"> <i class="fab fa-whatsapp"></i> &nbsp;+385 99 123 4567
+                <p class="text-3xl font-bold text-yellow-500"> <i class="fab fa-whatsapp"></i> &nbsp;+385 99 423 8485
                 </p>
 
                 <div
@@ -446,11 +440,11 @@
             <p class="mb-6" data-hr="&copy; 2025 B.V.D. Security - Sva prava pridržana. | Diskretne usluge zaštite"
                 data-en="&copy; 2025 B.V.D. Security - All rights reserved. | Discreet Protection Services">
                 >
-                &copy; 2025 B.V.D. Security - All rights reserved. | Discreet Protection Services
+                &copy; 2025 B.V.D. Security d.o.o - All rights reserved. | Discreet Protection Services
             </p>
             <p data-hr="Sve operacije provode se u skladu sa zakonskim i etičkim okvirima. Zajamčena je povjerljivost klijenata."
                 data-en="All operations conducted within legal and ethical frameworks. Client confidentiality guaranteed.">
-                All operations conducted within legal and ethical frameworks. Client confidentiality guaranteed.
+                Sve operacije provode se u skladu sa zakonskim i etičkim okvirima. Zajamčena je povjerljivost klijenata.
             </p>
         </div>
     </footer>
@@ -496,9 +490,7 @@
         document.querySelector('.client-modal-btn').addEventListener('click', () => {
             document.getElementById('client-modal').classList.remove('hidden');
         });
-        document.querySelector('.recruit-modal-btn').addEventListener('click', () => {
-            document.getElementById('recruit-modal').classList.remove('hidden');
-        });
+
         document.querySelectorAll('.close-modal').forEach(btn => {
             btn.addEventListener('click', () => {
                 btn.closest('.modal').classList.add('hidden');
@@ -575,6 +567,19 @@
                     link.classList.add("opacity-100");
                 });
             });
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "B.V.D. Security d.o.o.",
+        "image": "https://yourdomain/images/logo.jpeg",
+        "telephone": "+385 99 423 8485",
+        "address": {"@type": "PostalAddress", "addressCountry": "Ulica Zinke Kunc 3E, Zagreb 10000, Hrvatska"},
+        "areaServed": {"@type": "Country", "name": "Hrvatska"},
+        "offers": [{"@type": "Service", "name": "Djelatnosti privatne zaštite "}]
         }
     </script>
 </body>
