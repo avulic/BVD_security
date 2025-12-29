@@ -490,9 +490,6 @@
                 body: JSON.stringify({ token })
             })
                 .then(r => r.json())
-                .then(result => {
-                    console.log("Turnstile success:", result);
-                })
                 .then(data => {
                     document.getElementById("phone-1").append(data.phone);
                     document.getElementById("phone-1").style.display = "inline";
