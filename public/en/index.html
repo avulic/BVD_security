@@ -320,7 +320,7 @@
                 <input type="file" class="w-full p-4 bg-gray-800 rounded border border-gray-700">
                 <textarea rows="6" placeholder="Experience & Motivation"
                     class="w-full p-4 bg-gray-800 rounded border border-gray-700 focus:border-yellow-600 outline-none"></textarea>
-                <button type="submit"
+                <button type="submit" style="display: none;"
                     class="w-full bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-4 rounded text-lg transition">Submit
                     Application</button>
             </form>
@@ -445,8 +445,7 @@
         </div>
     </footer>
 
-    <script>
-
+   <script>
         const form = document.getElementById('contact-form');
 
         form.addEventListener('submit', async function (e) {
@@ -455,7 +454,7 @@
             const btn = form.querySelector('button[type="submit"]');
             const originalText = btn.textContent;
             btn.disabled = true;
-            btn.textContent = 'Sending...';
+            btn.textContent = 'Šaljem...';
 
             try {
                 const formData = new FormData(form);
@@ -470,17 +469,18 @@
                     document.getElementById('thank-you-modal').classList.remove('hidden');
                     form.reset();
                 } else {
-                    alert(json.message || 'Error submitting the form. Please try again later.');
+                    alert(json.message || 'Došlo je do greške pri slanju.');
                 }
             } catch (error) {
-                alert('Error submitting the form. Please try again later.');
+                alert('Greška pri slanju. Molimo pokušajte kasnije.');
             } finally {
                 btn.disabled = false;
                 btn.textContent = originalText;
             }
         });
         function onSuccess(token) {
-            fetch("https://late-mud-12c8.antevulic96.workers.dev", {
+            
+            fetch("https://late-mud-12c8.antevulic96.workers.dev/", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ token })
@@ -499,8 +499,8 @@
         function closeThankYou() {
             document.getElementById('thank-you-modal').classList.add('hidden');
         }
-
     </script>
+    
     <script>
         // Initialize AOS
         AOS.init({ once: true, duration: 800 });
