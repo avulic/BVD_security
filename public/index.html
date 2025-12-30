@@ -21,12 +21,13 @@
     }
     </script>
 
-   
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://challenges.cloudflare.com">
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
+
     <link href="./output.css" rel="stylesheet">
 
     <style>
@@ -296,8 +297,7 @@
                     </a>
                 </p>
 
-                <div class="cf-turnstile" data-sitekey="0x4AAAAAACJpcX4KfjbhT0Ma" data-theme="dark"
-                    data-callback="onSuccess"></div>
+                <div id="turnstile-form"></div>
 
                 <button id="submit" type="submit" style="display: inline;"
                     class="w-full bg-yellow-600 hover:bg-yellow-500 text-black font-bold py-4 rounded text-lg transition">Pošalji
@@ -426,8 +426,7 @@
                         <i class="fab fa-whatsapp"></i>&nbsp;
                     </a>
                 </p>
-                <div class="cf-turnstile" data-sitekey="0x4AAAAAACJpcX4KfjbhT0Ma" data-theme="dark"
-                    data-callback="onSuccess"></div>
+                <div id="turnstile-phone"></div>
 
                 <!-- <div class="right-8 transform -translate-y-1/2 text-6xl md:text-8xl font-bold text-yellow-500 opacity-80 z-10">
                     <a href="#" class="text-2xl hover:text-yellow-500 transition"><i class="fab fa-facebook-f"></i></a>
@@ -482,8 +481,48 @@
                 btn.textContent = originalText;
             }
         });
-        function onSuccess(token) {
-            
+
+
+
+        let widgetFormId = null;
+        let widgetPhoneId = null;
+        let turnstileSolved = false;
+
+        function renderTurnstiles() {
+            widgetFormId = turnstile.render("#turnstile-form", {
+                sitekey: "0x4AAAAAACJpcX4KfjbhT0Ma",
+                theme: "dark",
+                callback: (token) => onTurnstileSuccess(token, "form"),
+            });
+
+            widgetPhoneId = turnstile.render("#turnstile-phone", {
+                sitekey: "0x4AAAAAACJpcX4KfjbhT0Ma",
+                theme: "dark",
+                callback: (token) => onTurnstileSuccess(token, "phone"),
+            });
+        }
+
+        window.onload = renderTurnstiles;
+
+
+
+
+        function onTurnstileSuccess(token, source) {
+            if (turnstileSolved) return;
+            turnstileSolved = true;
+
+            // Remove the OTHER widget
+            if (source === "form" && widgetPhoneId !== null) {
+                turnstile.remove(widgetPhoneId);
+                document.getElementById("turnstile-phone").style.display = "none";
+            }
+
+            if (source === "phone" && widgetFormId !== null) {
+                turnstile.remove(widgetFormId);
+                document.getElementById("turnstile-form").style.display = "none";
+            }
+
+            // Send token to Worker
             fetch("https://late-mud-12c8.antevulic96.workers.dev/", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -493,12 +532,15 @@
                 .then(data => {
                     document.getElementById("phone-1").append(data.phone);
                     document.getElementById("phone-1").style.display = "inline";
+
                     document.getElementById("phone-2").append(data.phone);
                     document.getElementById("phone-2").style.display = "inline";
 
                     document.getElementById("submit").style.display = "inline";
                 });
         }
+
+
 
         function closeThankYou() {
             document.getElementById('thank-you-modal').classList.add('hidden');
