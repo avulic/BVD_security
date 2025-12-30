@@ -560,10 +560,13 @@
         // Modals
         document.querySelector('.client-modal-btn').addEventListener('click', () => {
             document.getElementById('client-modal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+
         });
         document.querySelectorAll('.close-modal').forEach(btn => {
             btn.addEventListener('click', () => {
                 btn.closest('.modal').classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
             });
         });
         document.querySelectorAll('.modal').forEach(modal => {
