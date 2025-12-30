@@ -96,10 +96,11 @@
   }
 }
 </script>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://challenges.cloudflare.com">
 
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://challenges.cloudflare.com">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
@@ -231,9 +232,9 @@
     <!-- Hero Section -->
     <section class="hero-bg relative min-h-[100dvh] flex items-end">
         <!-- Top bar: Logo + Language Switch + Menu -->
-        <div class="absolute top-0 left-0 right-0 flex justify-between items-center p-6 md:p-8 z-20">
+        <div class="absolute top-0 left-0 right-0 flex justify-between items-center p-6 md:p-8 z-20" style="min-height: 500px;">
             <div class="flex items-center gap-4">
-                <img src="../images/logo_nobg.webp" alt="B.V.D Logo" class="h-16 md:h-20">
+                <img src="../images/logo_nobg.webp" alt="B.V.D Logo" class="h-16 md:h-20" fetchpriority="high">
                 <span aria-hidden="true" class="sr-only">B.V.D</span>
                 <span aria-live="polite" class="block"></span>
             </div>
@@ -291,7 +292,7 @@
                 </div>
                 <div class="md:w-1/2 order-1 md:order-2 mb-8 md:mb-0 md:pl-12">
                     <img src="../images/bodyguard.webp" alt="Personal Bodyguard / Close Protection"
-                        class="rounded-lg shadow-2xl w-full">
+                        class="rounded-lg shadow-2xl w-full" width="637" height="425">
                 </div>
             </div>
             <!-- Service 2 -->
@@ -304,7 +305,8 @@
                     </p>
                 </div>
                 <div class="md:w-1/2 mt-8 md:mb-0 md:pr-12">
-                    <img src="../images/event.webp" alt="Event Security" class="rounded-lg shadow-2xl w-full">
+                    <img src="../images/event.webp" alt="Event Security" class="rounded-lg shadow-2xl w-full"
+                        width="637" height="425">
                 </div>
             </div>
             <!-- Service 3 -->
@@ -317,8 +319,8 @@
                     </p>
                 </div>
                 <div class="md:w-1/2 order-1 md:order-2 mb-8 md:mb-0 md:pl-12">
-                    <img src="../images/transport.webp" alt="Secure Transportation"
-                        class="rounded-lg shadow-2xl w-full">
+                    <img src="../images/transport.webp" alt="Secure Transportation" class="rounded-lg shadow-2xl w-full"
+                        width="637" height="425">
                 </div>
             </div>
             <!-- Service 4 -->
@@ -332,7 +334,7 @@
                 </div>
                 <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
                     <img src="../images/on_demand.webp" alt="Temporary / On-Demand Protection"
-                        class="rounded-lg shadow-2xl w-full">
+                        class="rounded-lg shadow-2xl w-full" width="637" height="425">
                 </div>
             </div>
             <!-- Sticky Buttons Container -->
@@ -637,8 +639,6 @@
     </script>
 
     <script>
-        // Initialize AOS
-        AOS.init({ once: true, duration: 800 });
         // Language Switch
         const langBtns = document.querySelectorAll('.lang-btn');
         langBtns.forEach(btn => {
@@ -717,7 +717,13 @@
             });
         });
     </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+    <script>
+        // Initialize AOS after the script loads
+        window.addEventListener('load', () => {
+            AOS.init({ duration: 1000, once: true });
+        });
+    </script>
 </body>
 
 </html>
