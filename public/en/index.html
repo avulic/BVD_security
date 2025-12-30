@@ -4,22 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.bvd.hr/en/" />
+
     <meta name="description"
-        content="B.V.D. Security Ltd. - Professional personal protection, bodyguard, event security and secure transportation services in Croatia. Discreet and reliable protection for individuals, families and business clients. Contact: +385 99 423 8485">
-    <title>B.V.D. Security | Private Protection in Croatia</title>
-    <link rel="icon" type="image/x-icon" href="../images/logo.jpeg">
+        content="B.V.D. Security d.o.o. provides professional bodyguard services, event security, and secure transport in Croatia. Discrete and reliable 24/7 protection.">
+    <title>B.V.D. Security | Professional Bodyguards & Protection Croatia</title>
+    <link rel="icon" type="image/x-icon" href="../images/logo.webp">
+
+    <link rel="alternate" hreflang="hr" href="https://www.bvd.hr/" />
+    <link rel="alternate" hreflang="en" href="https://www.bvd.hr/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.bvd.hr/" />
 
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "B.V.D. Security d.o.o.",
-        "image": "https://www.bvd.hr/images/logo.jpeg",
-        "address": {"@type": "PostalAddress", "addressCountry": "Ulica Zinke Kunc 3E, Zagreb 10000, Croatia"},
-        "areaServed": {"@type": "Country", "name": "Croatia"},
-        "offers": [{"@type": "Service", "name": "Private Security Services"}]
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "SecurityService",
+  "name": "B.V.D. Security d.o.o.",
+  "image": "https://www.bvd.hr/images/logo.jpeg",
+  "@id": "https://www.bvd.hr/en/",
+  "url": "https://www.bvd.hr/en/",
+  "telephone": "+385994238485",
+  "priceRange": "$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ulica Zinke Kunc 3E",
+    "addressLocality": "Zagreb",
+    "postalCode": "10000",
+    "addressCountry": "HR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 45.7934,
+    "longitude": 15.9994
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Croatia"
+  },
+  "description": "Professional personal protection, bodyguard services, event security, and secure transport in Croatia.",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Security Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Personal Bodyguard / Close Protection",
+          "description": "Protection for executives, public figures, and private individuals requiring constant security."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Event Security",
+          "description": "Strategic planning and on-site execution for private and corporate events."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Secure Transport",
+          "description": "Professional security drivers and route planning for transfers and daily travel."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "On-Demand Protection",
+          "description": "Short-term or situational protection with rapid deployment."
+        }
+      }
+    ]
+  }
+}
+</script>
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -31,13 +107,18 @@
     <link href="../output.css" rel="stylesheet">
 
     <style>
+        :root {
+            --safe-bottom: env(safe-area-inset-bottom, 16px);
+        }
+
         .hero-bg {
             position: relative;
             width: 100%;
-            height: 100vh;
+            min-height: 100vh;
+            min-height: 100dvh;
             /* or whatever height you need */
             /* Optional: base color or third layer */
-            background: url('../images/bg_overlay.jpg') center/cover no-repeat;
+            background: url('../images/bg_overlay.webp') center/cover no-repeat;
             opacity: 0.8;
         }
 
@@ -46,7 +127,7 @@
             position: absolute;
             inset: 0;
             /* top/right/bottom/left: 0 */
-            background: url('../images/hero.jpg') center/cover no-repeat;
+            background: url('../images/hero.webp') center/cover no-repeat;
             /* full control per layer */
             mix-blend-mode: multiply;
             opacity: 0.8;
@@ -148,11 +229,11 @@
 
 <body class="bg-black text-white" data-lang="en">
     <!-- Hero Section -->
-    <section class="hero-bg min-h-screen relative flex items-end">
+    <section class="hero-bg relative min-h-[100dvh] flex items-end">
         <!-- Top bar: Logo + Language Switch + Menu -->
         <div class="absolute top-0 left-0 right-0 flex justify-between items-center p-6 md:p-8 z-20">
             <div class="flex items-center gap-4">
-                <img src="../images/logo_nobg.png" alt="B.V.D Logo" class="h-16 md:h-20">
+                <img src="../images/logo_nobg.webp" alt="B.V.D Logo" class="h-16 md:h-20">
                 <span aria-hidden="true" class="sr-only">B.V.D</span>
                 <span aria-live="polite" class="block"></span>
             </div>
@@ -170,7 +251,7 @@
             </div>
         </div>
         <!-- Bottom left: Main text -->
-        <div class="absolute bottom-0 left-0 p-8 my-8 md:p-16 max-w-2xl z-10">
+        <div class="absolute left-0 bottom-[var(--safe-bottom)] p-6 md:p-16 max-w-2xl z-10">
             <h1 class="text-6xl md:text-8xl font-bold mb-4">
                 <span aria-hidden="true" class="sr-only">B.V.D</span>
                 <span id="hero-heading" aria-live="polite" class="block"></span>
@@ -209,7 +290,7 @@
                     </p>
                 </div>
                 <div class="md:w-1/2 order-1 md:order-2 mb-8 md:mb-0 md:pl-12">
-                    <img src="../images/bodyguard.jpg" alt="Personal Bodyguard / Close Protection"
+                    <img src="../images/bodyguard.webp" alt="Personal Bodyguard / Close Protection"
                         class="rounded-lg shadow-2xl w-full">
                 </div>
             </div>
@@ -223,7 +304,7 @@
                     </p>
                 </div>
                 <div class="md:w-1/2 mt-8 md:mb-0 md:pr-12">
-                    <img src="../images/event.jpg" alt="Event Security" class="rounded-lg shadow-2xl w-full">
+                    <img src="../images/event.webp" alt="Event Security" class="rounded-lg shadow-2xl w-full">
                 </div>
             </div>
             <!-- Service 3 -->
@@ -236,7 +317,8 @@
                     </p>
                 </div>
                 <div class="md:w-1/2 order-1 md:order-2 mb-8 md:mb-0 md:pl-12">
-                    <img src="../images/transport.jpg" alt="Secure Transportation" class="rounded-lg shadow-2xl w-full">
+                    <img src="../images/transport.webp" alt="Secure Transportation"
+                        class="rounded-lg shadow-2xl w-full">
                 </div>
             </div>
             <!-- Service 4 -->
@@ -249,7 +331,7 @@
                     </p>
                 </div>
                 <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
-                    <img src="../images/on_demand.jpg" alt="Temporary / On-Demand Protection"
+                    <img src="../images/on_demand.webp" alt="Temporary / On-Demand Protection"
                         class="rounded-lg shadow-2xl w-full">
                 </div>
             </div>
@@ -391,16 +473,23 @@
     <!-- About Us -->
     <section class="py-20 bg-gray-900">
         <div class="container max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl text-center font-bold mb-12">About Us</h2>
+            <h2 class="text-4xl md:text-5xl text-center font-bold mb-12">About Us - B.V.D. Security</h2>
             <div class="space-y-6 text-justify md:pr-8">
                 <p>
-                    B.V.D Security d.o.o. is a private security company specializing in personal and bodyguard
-                    protection in the Republic of Croatia. Our team conducts risk assessments and develops customized
-                    security strategies with the aim of creating a stable and controlled environment for clients.
+                    <strong>B.V.D Security d.o.o.</strong> is a premier private security firm based in Zagreb,
+                    specialized in <strong>close protection and bodyguard services</strong> across Croatia. Our team
+                    consists of highly trained security professionals and former law enforcement officers experienced in
+                    handling high-pressure scenarios with absolute control.
                 </p>
                 <p>
-                    Effective security is not an expense, but a thoughtful investment in personal safety, business
-                    continuity and reputation.
+                    We provide comprehensive risk assessments and tailored security strategies in major city
+                    <strong>Zagreb</strong>. We understand that effective
+                    security is a vital investment in personal safety and business continuity.
+                </p>
+                <p>
+                    Whether you require executive protection for corporate events, secure VIP transport, or residential
+                    security for holiday villas, B.V.D. Security guarantees <strong>24/7 availability</strong> and total
+                    discretion.
                 </p>
             </div>
             <!-- Image and Map -->
