@@ -100,8 +100,6 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://challenges.cloudflare.com">
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
 
     <link href="../output.css" rel="stylesheet">
@@ -251,7 +249,7 @@
             </div>
         </div>
         <!-- Bottom left: Main text -->
-        <div class="absolute left-0 bottom-[var(--safe-bottom)] p-6 md:p-16 max-w-2xl z-10" style="min-height: 250px;">
+        <div class="absolute left-0 bottom-[var(--safe-bottom)] p-6 md:p-16 max-w-2xl z-10" style="min-height: 300px;">
             <h1 class="text-6xl md:text-8xl font-bold mb-4">
                 <span aria-hidden="true" class="sr-only">B.V.D</span>
                 <span id="hero-heading" aria-live="polite" class="block"></span>
@@ -703,7 +701,7 @@
                 }
             }, speed);
         }
-        window.addEventListener("load", () => {
+        window.addEventListener("DOMContentLoaded", () => {
             const heading = document.getElementById("hero-heading");
             const subtitle = document.getElementById("hero-subtitle");
             const paragraph = document.getElementById("hero-paragraph");
@@ -721,6 +719,8 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <script>
         // Initialize AOS after the script loads
         window.addEventListener('load', () => {
