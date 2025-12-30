@@ -20,4 +20,22 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.bvd.hr/en/"/>
   </url>
 
+  <url>
+    <loc>https://www.bvd.hr/privatnost.html</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bvd.hr/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.bvd.hr/privatnost.html"/>
+  </url>
+
+  <url>
+    <loc>https://www.bvd.hr/en/privacy.html</loc>
+    <lastmod>2025-12-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://www.bvd.hr/privatnost.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.bvd.hr/en/privacy.html"/>
+  </url>
+
 </urlset>

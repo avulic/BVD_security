@@ -9,6 +9,8 @@
     <meta name="description"
         content="B.V.D. Security d.o.o. nudi profesionalne usluge tjelohranitelja, osiguranje događaja i siguran transport u Hrvatskoj. Diskretna i pouzdana zaštita 24/7.">
     <title>B.V.D. Security d.o.o. | Tjelohranitelji i Privatna Zaštita Zagreb</title>
+
+    <link rel="preload" as="image" href="images/hero.webp">
     <link rel="icon" type="image/x-icon" href="./images/logo.webp">
 
     <link rel="alternate" hreflang="hr" href="https://www.bvd.hr/" />
@@ -84,18 +86,21 @@
     }
     }
     </script>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://challenges.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://challenges.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://maps.googleapis.com" crossorigin>
 
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" defer></script>
 
     <link href="./output.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        media="print" onload="this.media='all'">
     <style>
         :root {
             --safe-bottom: env(safe-area-inset-bottom, 16px);
         }
+
 
         .hero-bg {
             position: relative;
@@ -104,19 +109,18 @@
             min-height: 100dvh;
             /* or whatever height you need */
             /* Optional: base color or third layer */
-            background: url('images/bg_overlay.webp') center/cover no-repeat;
-            opacity: 0.8;
+            background: #000 url('images/bg_overlay.webp') center/cover no-repeat;
         }
 
+        /* Optimization: Use background-color as fallback while image loads to prevent white flash */
         .hero-bg::before {
             content: "";
             position: absolute;
             inset: 0;
-            /* top/right/bottom/left: 0 */
-            background: url('images/hero.webp') center/cover no-repeat;
-            /* full control per layer */
+            background: #000 url('images/hero.webp') center/cover no-repeat;
             mix-blend-mode: multiply;
             opacity: 0.8;
+            z-index: 1;
         }
 
         .hero-bg::after {
@@ -125,6 +129,12 @@
             inset: 0;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9));
             /* optional dark overlay */
+        }
+
+        /* FIX CLS: Reserve space for the hero text area */
+        .hero-content-container {
+            min-height: 300px;
+            contain: layout; 
         }
 
         .modal {
@@ -220,7 +230,8 @@
         <!-- Top bar: Logo + Language Switch + Menu -->
         <div class="absolute top-0 left-0 right-0 flex justify-between items-center p-6 md:p-8 z-20">
             <div class="flex items-center gap-4">
-                <img src="images/logo_nobg.webp" alt="B.V.D Logo" class="h-16 md:h-20" fetchpriority="high">
+               <img src="images/logo_nobg.webp" alt="B.V.D Logo" width="80" height="80" class="h-16 md:h-20 w-auto"
+                    fetchpriority="high">
                 <span aria-hidden="true" class="sr-only">B.V.D</span>
                 <span aria-live="polite" class="block"></span>
             </div>
@@ -490,7 +501,8 @@
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d11127.934257328188!2d15.998925999999999!3d45.791557!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDXCsDQ3JzI5LjYiTiAxNcKwNTknNTYuMSJF!5e0!3m2!1sen!2sus!4v1766502073133!5m2!1sen!2sus"
                         width="100%" height="450" class="w-full h-full" style="border:0;" allowfullscreen=""
-                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="B.V.D. Security Lokacija"
+                        loading="lazy"></iframe>
                 </div>
             </div>
             <!-- Additional contact info -->
@@ -517,7 +529,8 @@
     <footer class="py-8 bg-black text-center text-gray-500 text-sm">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <p class="mb-6">
-                &copy; 2025 B.V.D. Security d.o.o - Sva prava pridržana. | Diskretne usluge zaštite
+                &copy; 2025 B.V.D. Security d.o.o - Sva prava pridržana. | <a href="privatnost.html"
+                    class="underline hover:text-gray-300">Pravila privatnosti</a>
             </p>
             <p class="text-xs">
                 Slike sa web stranici dizajnirane na
@@ -714,7 +727,6 @@
 
     </script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
