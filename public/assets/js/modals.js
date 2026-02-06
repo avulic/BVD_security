@@ -68,9 +68,10 @@ function initModals() {
 
 // Function for the Thank You modal specifically
 function closeThankYou() {
-  const thankYouModal = document.getElementById('thank-you-modal');
-  if (thankYouModal) {
-    thankYouModal.classList.add('hidden');
-    document.body.classList.remove('overflow-hidden');
+  const modal = document.getElementById('thank-you-modal');
+  if (modal) {
+    modal.classList.add('hidden');
   }
+  // This is the key line to unfreeze the page
+  document.body.classList.remove('overflow-hidden');
 }

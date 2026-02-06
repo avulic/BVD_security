@@ -25,7 +25,7 @@ function initHero() {
     }, speed);
   }
 
-  typeWriter(heading, "B.V.D", 150, () => {
+  typeWriter(heading, "BVD", 150, () => {
     typeWriter(subtitle, "Sigurnost u svakom trenutku", 80, () => {
       if (paragraph) paragraph.classList.add("opacity-100");
       if (link) link.classList.add("opacity-100");
