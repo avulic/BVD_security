@@ -2,42 +2,97 @@
 <html lang="en">
 
 <head>
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://www.bvd.hr/en/services.html" />
 
-    <meta name="description"
-        content="Explore our security solutions: Close protection, VIP transport, and event security services across Croatia.">
-    <title>Our Services | Professional Security & Bodyguards | BVD Security</title>
+    <meta name="description" content="Specialized security services: Close protection, property protection, event security, and technical security in Croatia.">
+    <title>Our Services | BVD Security d.o.o.</title>
 
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.bvd.hr/en/services.html">
-    <meta property="og:title" content="Security Services in Croatia | BVD Security">
+    <meta property="og:title" content="Our Services | BVD Security">
+    <meta property="og:description" content="Specialized security services: Close protection, property protection, event security, and technical security in Croatia.">
+    <meta property="og:image" content="https://www.bvd.hr/assets/images/hero.webp">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bvd.hr/en/services.html">
+    <meta property="twitter:title" content="Our Services | BVD Security">
+    <meta property="twitter:description" content="Specialized security services: Close protection, property protection, event security, and technical security in Croatia.">
+    <meta property="twitter:image" content="https://www.bvd.hr/assets/images/hero.webp">
     
-    <link rel="alternate" hreflang="hr" href="https://www.bvd.hr/usluge.html" />
-    <link rel="alternate" hreflang="en" href="https://www.bvd.hr/en/services.html" />
+    <link rel="icon" type="image/x-icon" href="https://www.bvd.hr/assets/images/logo.webp">
 
-    <link rel="icon" type="image/x-icon" href="../assets/images/logo.webp">
-    <link href="../assets/css/main.css" rel="stylesheet">
-    <link href="../assets/css/output.css" rel="stylesheet">
-
-        <script type="application/ld+json">
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ServicesPage",
-      "mainEntity": {
-        "@type": "SecurityService",
-        "name": "BVD Security d.o.o.",
-        "telephone": "+385994238485",
-        "email": "info@bvd.hr",
-        "address": {
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://www.bvd.hr/en/services.html",
+          "url": "https://www.bvd.hr/en/services.html",
+          "name": "Our Services | BVD Security d.o.o.",
+          "description": "Specialized security services: Close protection, property protection, event security, and technical security in Croatia.",
+          "inLanguage": "en"
+        },
+        {
+          "@type": "SecurityService",
+          "@id": "https://www.bvd.hr/en/#organization",
+          "name": "BVD Security d.o.o.",
+          "url": "https://www.bvd.hr/en/",
+          "telephone": "+385994238485",
+          "email": "info@bvd.hr",
+          "address": {
             "@type": "PostalAddress",
             "streetAddress": "Lastovska ulica",
             "addressLocality": "Zagreb",
             "postalCode": "10000",
             "addressCountry": "HR"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Specialized Security Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "position": 1,
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Close Protection",
+                  "description": "We provide professional close protection for VIPs, discreet escorting, and the implementation of security measures based on risk assessment."
+                }
+              },
+              {
+                "@type": "Offer",
+                "position": 2,
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Property Protection",
+                  "description": "We organize permanent or temporary protection of commercial, residential, and industrial facilities, construction sites, and warehouses."
+                }
+              },
+              {
+                "@type": "Offer",
+                "position": 3,
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Event Security",
+                  "description": "Professional security for public and private gatherings, concerts, and sports events with predefined operational plans."
+                }
+              },
+              {
+                "@type": "Offer",
+                "position": 4,
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Technical Security",
+                  "description": "In cooperation with authorized partners, we offer video surveillance, anti-burglary and fire alarm systems, and access control."
+                }
+              }
+            ]
+          }
         }
-      }
+      ]
     }
     </script>
 

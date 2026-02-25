@@ -2,45 +2,58 @@
 <html lang="en">
 
 <head>
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://www.bvd.hr/en/about.html" />
 
-    <meta name="description"
-        content="Learn more about BVD Security d.o.o., a licensed security company in Croatia providing professional private protection services.">
+    <meta name="description" content="Meet BVD Security d.o.o., a licensed security company based in Zagreb. Our team consists of highly trained professionals with years of experience.">
     <title>About Us | BVD Security d.o.o.</title>
 
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.bvd.hr/en/about.html">
-    <meta property="og:title" content="About BVD Security d.o.o. | Professional Private Protection Services">
+    <meta property="og:title" content="About Us | BVD Security">
+    <meta property="og:description" content="Meet BVD Security, a licensed security company. Our team consists of professionals with years of experience in private protection.">
+    <meta property="og:image" content="https://www.bvd.hr/assets/images/hero.webp">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.bvd.hr/en/about.html">
+    <meta property="twitter:title" content="About Us | BVD Security">
+    <meta property="twitter:description" content="Meet BVD Security, a licensed security company. Our team consists of professionals with years of experience in private protection.">
+    <meta property="twitter:image" content="https://www.bvd.hr/assets/images/hero.webp">
     
-    <link rel="alternate" hreflang="hr" href="https://www.bvd.hr/o-nama.html" />
-    <link rel="alternate" hreflang="en" href="https://www.bvd.hr/en/about.html" />
+    <link rel="icon" type="image/x-icon" href="https://www.bvd.hr/assets/images/logo.webp">
 
-    <link rel="icon" type="image/x-icon" href="../assets/images/logo.webp">
-    <link href="../assets/css/main.css" rel="stylesheet">
-    <link href="../assets/css/output.css" rel="stylesheet">
-
-        <script type="application/ld+json">
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "AbouttPage",
-      "mainEntity": {
-        "@type": "SecurityService",
-        "name": "BVD Security d.o.o.",
-        "telephone": "+385994238485",
-        "email": "info@bvd.hr",
-        "address": {
+      "@graph": [
+        {
+          "@type": "AboutPage",
+          "@id": "https://www.bvd.hr/en/about.html",
+          "url": "https://www.bvd.hr/en/about.html",
+          "name": "About Us | BVD Security d.o.o.",
+          "description": "Meet BVD Security d.o.o., a licensed security company based in Zagreb. Our team consists of highly trained professionals with years of experience.",
+          "inLanguage": "en"
+        },
+        {
+          "@type": "SecurityService",
+          "@id": "https://www.bvd.hr/en/#organization",
+          "name": "BVD Security d.o.o.",
+          "url": "https://www.bvd.hr/en/",
+          "telephone": "+385994238485",
+          "email": "info@bvd.hr",
+          "address": {
             "@type": "PostalAddress",
             "streetAddress": "Lastovska ulica",
             "addressLocality": "Zagreb",
             "postalCode": "10000",
             "addressCountry": "HR"
+          }
         }
-      }
+      ]
     }
     </script>
-</head>
+
 
     <style>
         body {
