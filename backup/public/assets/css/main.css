@@ -1,0 +1,149 @@
+:root {
+    --safe-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+@theme {
+    --color-black: #0E0E0E;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+
+.hero-bg {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: #000 url('../images/bg_overlay.webp') center/cover no-repeat;
+}
+
+.hero-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #000 url('../images/hero.webp') center/cover no-repeat;
+    mix-blend-mode: multiply;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9));
+
+}
+
+
+.hero-content-container {
+    min-height: 300px;
+    contain: layout;
+}
+
+.lang-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    background-color: transparent;
+    color: white;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.lang-btn.active {
+    background-color: #ca8a04;
+    color: black;
+}
+
+.secure-blur {
+    filter: blur(4px);
+    opacity: 0.3;
+}
+
+.modal {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.sticky-buttons {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 40;
+    transition: all 0.4s ease;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.sticky-buttons.unstick {
+    position: static;
+    transform: none;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Desktop & Tablet: both buttons visible and centered */
+@media screen and (min-width: 769px) {
+    .sticky-buttons {
+        justify-content: center;
+    }
+
+    .sticky-buttons.unstick {
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile: hide "Join Our Team" when sticky, show only main button centered */
+@media screen and (max-width: 768px) {
+    .sticky-buttons .recruit-modal-btn {
+        display: none;
+    }
+
+    .sticky-buttons {
+        justify-content: center;
+        transform: none;
+    }
+
+    .sticky-buttons .client-modal-btn {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* Mobile when unstick: show both buttons, centered and stacked vertically */
+@media screen and (max-width: 768px) {
+    .sticky-buttons.unstick {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .sticky-buttons.unstick .recruit-modal-btn {
+        display: block;
+    }
+
+    .sticky-buttons.unstick .client-modal-btn,
+    .sticky-buttons.unstick .recruit-modal-btn {
+        width: 80%;
+        max-width: 320px;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
